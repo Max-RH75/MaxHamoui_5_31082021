@@ -1,14 +1,123 @@
 <!DOCTYPE html>
-<head></head>
+<html lang="fr">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  
+  <link rel="stylesheet"
+  href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+  integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+  crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="./fonts/belligerentmadness/stylesheet.css" type="text/css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <title>Orinoco</title>
+</head>
+
+<div class="bgb bgb-shadow">
+  <div class="container">
+    <div class="row">
+      <nav class="col navbar navbar-expand-lg navbar-dark d-flex justify-content-between pt-2 pb-1">
+        <a class="navbar-brand logo" href="index.html"><i class="fas fa-shopping-cart"></i> Orinoco</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div id="navbarContent" class="collapse navbar-collapse d-flex justify-content-sm-start justify-content-lg-end">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="index.html">Accueil</a>
+            </li>
+            <li class="nav-item">
+              <a class=" navp nav-link" href="panier.html"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"><path d="M10 19.5c0 .829-.672 1.5-1.5 1.5s-1.5-.671-1.5-1.5c0-.828.672-1.5 1.5-1.5s1.5.672 1.5 1.5zm3.5-1.5c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5c0-.828-.672-1.5-1.5-1.5zm6.305-15l-3.432 12h-10.428l-3.777-9h-2.168l4.615 11h13.239l3.474-12h1.929l.743-2h-4.195z"/></svg><span id="cartNumber"></span></a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+</div>
+
 <body>
-    <header>
+  <div class="container container-panier mt-5 p-5">
+    <button id="cartEmpty" class="btn btn-info mb-4">
+          Vider le panier
+    </button>
+
+      <h3 class="pb-3">Votre commande</h3>
+      
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Article</th>
+            <th>Quantité</th>
+            <th>Prix</th>
+          </tr>
+        </thead>
+        <tbody id="recapCommande"></tbody>
+      </table>
+
+      <div>
         
-    </header>
-    <main>
+      </div>
 
-    </main>
-    <footer>
+      <form class="m-4 mt-5" id="formulaire">
+        <div class="form-row">
+          <div class="form-group col-md-4 pr-md-5">
+            <label for="nom">Nom</label>
+            <input class="form-control" id="nom" type="text" minlength="3" pattern="[a-zA-ZÀ-ÿ]*" placeholder="Durand" required/>
+          </div>
+          <div class="form-group col-md-4">
+            <label for="prenom">Prénom</label>
+            <input class="form-control" id="prenom" type="text" minlength="3" pattern="[a-zA-ZÀ-ÿ]*" placeholder="Alain" required/>
+          </div>
+          <div class="form-group col-md-8">
+            <label for="email">Adresse email</label>
+            <input class="form-control" id="email" type="email" minlength="10" placeholder="alaindurand@gmail.fr" required/>
+          </div>
+          <div class="form-group col-md-8">
+            <label for="adresse">Adresse</label>
+            <input class="form-control" id="adresse" type="text"minlength="8" placeholder="1 place de l'eglise" required />
+          </div>
+          <div class="form-group col-md-5 pr-md-5">
+            <label for="ville">Ville</label>
+            <input class="form-control" id="ville" type="text" minlength="3" pattern="[a-zA-ZÀ-ÿ'-,.s ]*" placeholder="Paris" required/>
+          </div>
+          <div class="col-md-8">
+            <button class="btn btn-danger pr-4 pl-4" id="btnPaiement">
+              Paiement
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
 
-    </footer>
+  <div class="bgb mt-5 pt-4 pb-4 footer">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <ul class="list-inline text-center">
+            <li class="list-inline-item"><a href="#" class="text-white">Contact</a></li>
+            <li class="list-inline-item text-white">&middot;</li>
+            <li class="list-inline-item"><a href="#" class="text-white">À propos</a></li>
+            <li class="list-inline-item text-white">&middot;</li>
+            <li class="list-inline-item"><a href="#" class="text-white">Partenaires</a></li>
+            <li class="list-inline-item text-white">&middot;</li>
+            <li class="list-inline-item"><a href="#" class="text-white">Conditions d'utilisations</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/d328c4588c.js" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="js/panier.js"></script>
 </body>
 </html>
