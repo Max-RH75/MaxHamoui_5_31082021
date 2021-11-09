@@ -1,0 +1,196 @@
+/*Toute la page*/
+
+html, body {
+    margin:0;
+    padding:0;
+}
+
+body {
+    background-color: #47749b;
+}
+
+.bgb {
+    background-color: #283d7b;
+}
+
+/*Partie haute des pages*/
+
+.bgb-shadow {
+    box-shadow: 0 0 0.5rem;
+}
+
+.logo {
+    font-size: 46px;
+    font-family: 'belligerent_madnessregular';
+}
+
+svg {
+    fill: white;
+}
+
+.navbar-nav {
+    font-size: 20px;
+}
+
+.navp {
+    font-size: 18px;
+    position: relative;
+    bottom: 0.05rem;
+}
+
+#cartNumber {
+    position: relative;
+    right: 1.25rem;
+    bottom: 0.3rem;
+}
+
+#bloc-hero {
+    position: relative;
+    width: 100%;
+    height: 40rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+#bloc-hero img {
+    position: relative;
+    width: 100%;
+    height: 80%;
+    object-fit: cover;
+    box-shadow: 0 0 0.5rem;
+    
+}
+
+#text-hero {
+    position: absolute;
+    right: 45%; top: 5%;
+    max-width: 50%;
+    background-color: #3536365d;
+    font-family: 'raleway';
+    font-weight: 600;
+    color: whitesmoke;
+    text-shadow: 0 0 1rem #1e2d5b;
+    
+}
+
+#text-hero h1 {
+    font-size: 3.6vmax;
+}
+
+#container-main .card:hover {
+    transform: scale(0.98);
+    transition-duration: 0.5s;
+}
+
+#decouvrir {
+    color: white;
+    font-family: 'raleway';
+    font-weight: 600;
+    align-self: center;
+    position: absolute;
+    top: 33rem;
+    font-size: 4vmax;
+    text-shadow: 0 0 1rem #1e2d5b;
+}
+
+#text-hero a {
+    color: inherit;
+    text-decoration: none;
+}
+
+#decouvrir a {
+    color: inherit;
+    text-decoration: none;
+}
+
+#text-hero:hover {
+    transform: scale(1.1);
+    transition-duration: 0.5s;
+}
+
+#decouvrir:hover {
+    transform: scale(1.1);
+    transition-duration: 0.5s;
+}
+
+/*Partie du millieu des pages*/
+
+.c1-position {
+    position: relative;
+    bottom: 2.5rem;
+}
+
+.card {
+    border-radius: 40px;
+    border : 0px rgb(74, 73, 73) solid;
+    box-shadow: 0 0 5px;
+    margin-top: 1.5rem;
+}
+
+.card a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.card-img {
+    border-radius: 40px;
+    box-shadow: 0 0 5px;
+}
+
+.card-price {
+    font-weight: 650;
+    font-size: 20px;
+    text-align: center;
+}
+
+.card-title, .card-text {
+    text-align: center;
+    font-family: 'raleway';
+}
+
+.card-text {
+    font-weight: 500;
+}
+
+/* Page produit */
+
+.formprod {
+    width: 40%;
+}
+
+.prixprod {
+    font-weight: 600;
+    font-size: 24px;
+}
+
+/* Page panier */
+
+.container-panier {
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 0 0.3rem;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+/* Page confirmation */
+
+.alert {
+    font-size: 24px;
+    text-align: center;
+}
+
+.card-textconf {
+    font-size: 20px;
+}
+
+/*Partie basse des pages*/
+
+.footer {
+    font-family: 'raleway';
+    font-weight: 700;
+    font-size: 16px;
+    box-shadow: 0 0 0.5rem;
+}
