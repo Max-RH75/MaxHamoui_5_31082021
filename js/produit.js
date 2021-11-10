@@ -38,7 +38,6 @@ function displayArticle(produit) {
 // Fonction event pour cartButton qui récupère le panier ou crée un array vide, les valeurs sont ajouté à notre array, et le localStorage est utilisé, la fonction cartNumber est appelé pour mettre à jour le visuel.
 function addProduct(produit) {
   var quantity = document.getElementById("quantity");
-  // document.getElementById("cartButton").onclick = function (event) {
   document.getElementById("cartButton").addEventListener ("click", function(event) {
     event.preventDefault();
     var cartData = JSON.parse(localStorage.getItem("cart")) || [];
