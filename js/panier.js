@@ -16,7 +16,7 @@ function displayPanier() {
       document.getElementById("recapCommande").innerHTML += `<tr>
     <td>${i.nom}</td>
     <td>${i.quantity}</td>
-    <td>${(i.prix / 100) * i.quantity}€</td>`;
+    <td>${(i.prix / 100) * i.quantity}€</td></tr>`;
       total += (i.prix / 100) * i.quantity;
       nArticles = Number(i.quantity);
     }
@@ -43,26 +43,17 @@ document.getElementById("cartEmpty").addEventListener("click", function (event) 
 // Fonction qui verifie si le formulaire est correct pour envoyer toutes les données au serveur.
 function formValid() {
   document.getElementById("btnPaiement").addEventListener("click", function (event) {
-    var products = [];
     var contact = {
       firstName: document.getElementById("prenom").value,
       lastName: document.getElementById("nom").value,
       email: document.getElementById("email").value,
       address: document.getElementById("adresse").value,
       city: document.getElementById("ville").value,
-      
     };
-    for (product of panierTotal) {
-      products.push(product.id);
-    }
     if (formulaire.checkValidity()) {
       fetch('http://localhost:3000/api/cameras/order', {
         method: "POST",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ contact, products }),
+        body: JSON.stringify({ contact }),
       })
         .then(function (response) {
           if (response.ok) {

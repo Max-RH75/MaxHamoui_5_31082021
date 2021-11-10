@@ -39,7 +39,6 @@ function displayArticle(produit) {
 function addProduct(produit) {
   var quantity = document.getElementById("quantity");
   document.getElementById("cartButton").addEventListener ("click", function(event) {
-    event.preventDefault();
     var cartData = JSON.parse(localStorage.getItem("cart")) || [];
     cartData.push({
       nom: produit.name,
