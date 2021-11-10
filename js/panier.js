@@ -1,8 +1,8 @@
-// Variable globale qui renseignera le nombre d'articles lors de la confirmation à l'utilisateur
+// 1ère var : Variable globale qui renseignera le nombre d'articles lors de la confirmation à l'utilisateur.
+// 2ème var : Variable globale qui renseignera le prix payé total lors de la confirmation à l'utilisateur.
+//3ème var : Variable globale en recupérant le tableau "panier" du local et en le parsant pour lui rendre ses attributs.
 var nArticles = 0;
-// Variable globale qui renseignera le prix payé total lors de la confirmation à l'utilisateur
 var total = 0;
-//Variable globale en recupérant le tableau "panier" du local et en le parsant pour lui rendre ses attributs
 var panierTotal = JSON.parse(localStorage.getItem("cart"));
 
 displayPanier();
@@ -30,7 +30,7 @@ function displayPanier() {
   }
 }
 
-// on ajoute event sur le bouton vider le panier qui demande une confirmation puis si oui, clear le localstorage et recharge la page.// document.getElementById("panierVide").onclick = function (event) {
+// Event qui demande confirmation pour vider le localStorage, à l'acceptation il se vide et la page se recharge.
 document.getElementById("cartEmpty").addEventListener("click", function (event) {
   if (window.confirm("Videz le panier ?")) {
     localStorage.clear();
@@ -39,3 +39,55 @@ document.getElementById("cartEmpty").addEventListener("click", function (event) 
     return console.log("votre panier est vide")
   }
 });
+
+// Fonction qui verifie si le formulaire est correct pour envoyer toutes les données au serveur.
+function formValid() {
+  document.getElementById("btnPaiement").addEventListener("click", function (event) {
+    var products = [];
+    var contact = {
+      firstName: document.getElementById("prenom").value,
+      lastName: document.getElementById("nom").value,
+      email: document.getElementById("email").value,
+      address: document.getElementById("adresse").value,
+      city: document.getElementById("ville").value,
+      
+    };
+    for (product of panierTotal) {
+      products.push(product.id);
+    }
+    if (formulaire.checkValidity()) {
+      fetch('http://localhost:3000/api/cameras/order', {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ contact, products }),
+      })
+        .then(function (response) {
+          if (response.ok) {
+            return response.json();
+          } else {
+            return console.log("Erreur");
+          }
+        })
+        .then(function () {
+          window.location.href = "./confirmation.html";
+        });
+    } else {
+      alert("Le formulaire n'est pas rempli correctement");
+    }
+  });
+}
+
+// Fonction qui retourne le visuel du nombre d'articles dans le panier, si le panier de localstorage = null, la valeur sera de 0, sinon elle correspondra à la valeur de la propriété length.
+function cartNumber() {
+  var cartNumber;
+  if (JSON.parse(localStorage.getItem("cart")) === null) {
+    cartNumber = 0;
+  } else {
+    cartNumber = JSON.parse(localStorage.getItem("cart")).length;
+  }
+document.getElementById("cartNumber").innerHTML =
+ `${cartNumber}`;
+}
