@@ -74,7 +74,7 @@ svg {
 }
 
 #text-hero h1 {
-    font-size: 3.6vmax;
+    font-size: 3vmax;
 }
 
 #container-main .card:hover {
@@ -89,7 +89,7 @@ svg {
     align-self: center;
     position: absolute;
     top: 33rem;
-    font-size: 4vmax;
+    font-size: 4rem;
     text-shadow: 0 0 1rem #1e2d5b;
 }
 
@@ -152,6 +152,10 @@ svg {
     font-weight: 500;
 }
 
+.text-position {
+    margin-bottom: -3rem;
+}
+
 /* Page produit */
 
 .formprod {
@@ -184,6 +188,7 @@ svg {
 
 .card-textconf {
     font-size: 20px;
+    font-weight: 600;
 }
 
 /*Partie basse des pages*/
